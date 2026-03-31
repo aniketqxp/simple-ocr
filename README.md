@@ -34,10 +34,6 @@ Without this token, code mode will still work, but it will only apply local OCR 
 
 > Note: client-side environment variables are bundled into the app. For production usage, keep sensitive keys on a backend service.
 
-## Design
-
-Styling is intentionally subtle and functional, with open-source interface patterns used as inspiration. The design prioritizes readable layouts, reserved contrast, and minimal visual noise.
-
 ## Project structure
 
 - `index.html` — Vite entry point and app markup
