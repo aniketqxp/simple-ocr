@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR App</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAATrAAAE6wHYKlsNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA/BJREFUWIXFlktMVFcYx3/fnTsDDAlkhmKN1SYES0X6MCY1stCQ2jZl01UXLVKsrcVe0jDCpkk3bm1SRCDBakzDw6TpI22jSdloakUalT5SjIuGRBPlVYkiFmYYuJyvi3GG4SWDoP5Xc7/z/+b/O+eee88VllCFE7qC6Im25saGeK1zoLcOZT+QuVT/A9QnllR6lnK99EpxmkD9lm3b7/3dfeliV19vscIJwLeCcIAslJ32YqNljhOw8b4FZgPIsCqH9zjVdw2MLTfJI0KWz0vYdYlOm+ShDfMAyhwnYGvaQVAHMKA93J+tEUsfJnzLUwEybBujytU7o4xOTibGrWRzuRN63sbXLZa+o2jIjqatUayvgWwRatubj7QsFyDL5yXDjs3TEmFNRtqs8cQKvF9VtdYoZxFuWB5T3NrUNAxQ4YQ+RLSmNWkTLqaImeB6pI9cX5BcbxCAsOtiVLFEABhz3YUBjHq/AsbS3fTS482fj8brbUcbXkxlpn3RIZputnPX/Q9LLN7OfZNdwe1Epw1XR+6yJj2dMddlaDyS6DnT3xkDKHdqdoApVUzJ8eMz4amqLzpE/Y0WxqbD9ydj+PbWz0zqJKU5OxmNTjEanZrVc6b/At9cOx3bA5aY3Qi/tx9t+nWl4cn6afgMHbfPz6vHwk8B8U2olIB0rGb4YhDJ4TCzB9YrXFvt8GQIAO+ENSs8AaBQb2OdfRThyRA67s6rC8BU+FyxwbM+lT/6616k9MdbF/dOmJmXScRM8ce9ASLT8wPmSsen0PD0DMDkxPk6VWpTCX+QrodH2H3l+xQhXDQc81kaO9VWrDx/gK1Zz6TklUwb8ce2n83KjtRZ8luLnm0LQsQBErpz5zZdXZ0YYxZsmquNGwsoKnphGYjzIeYh+zP9FG7aPKvW3X2Z/PznCAYDidrg4MBDByekc1YgGMxh16tvLOC8TDAYYN26mQcl+ffDKkeyh1K/aSko37v2z38kMpiK1295e34oOfTZqgLsz3v5UHXRJ98t5auoDD2rHvcjmPNB8rikNq8LVD8xAMtoHtD/xABASoFzTwSgwql5TYWtRvTkYwcoc5wAmKOCnj7Z3PjbIwV4zzlwoOLjUE/8+t19oadtfB1AmlHfvnh9VR/DuPZUhWpUtU5FaisrP82OeKLlgh4EHbEMu1qOfXEr7k1pBQoKNhEI5KQW7lTvVeUwMCpo+YRn4l9B60RoS5/O2NZyrLE32Z/SChQWbl7adF9GLBVVgEmQX1RNQ4bJOLXY17YN9AErf7EDAjfam49c2lMVCqhSp9Df/mVj+4N6LBWrEri5wuwxEanz+XdcAmhtbqhXpFZUP1iq8X9jwaKAjGoaAgAAAABJRU5ErkJggg==" />
+  </head>
+  <body data-theme="light">
+    <div class="container">
+      <div class="header">
+        <div class="header-left">
+          <div class="logo">
+            <div class="logo-icon">O</div>
+            <h1>OCR</h1>
+          </div>
+          <span class="badge">No limits • No ads</span>
+        </div>
+        <div class="header-controls">
+          <div class="ocr-mode-selector">
+            <button class="ocr-mode-btn active" data-mode="text">Text</button>
+            <button class="ocr-mode-btn" data-mode="code">Code</button>
+          </div>
+          <div class="mode-toggle-wrapper">
+            <div class="mode-toggle" id="themeToggle"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-zone-content">
+          <div class="drop-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 10h22l14 14v28a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V16a6 6 0 0 1 6-6Z" />
+              <path d="M40 10v14h14" />
+              <path d="M24 30h16M24 38h16M24 46h10" />
+            </svg>
+          </div>
+          <h2>Drop images here</h2>
+          <p>or paste from clipboard</p>
+          <div class="keyboard-hint">
+            <span class="key">Ctrl</span> + <span class="key">V</span> to paste
+            <span style="margin: 0 0.5rem">•</span>
+            <span class="key">Enter</span> to process
+          </div>
+          <div class="features-hint">
+            <div class="feature-item">
+              <span class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 13l4 4 10-10" />
+                </svg>
+              </span>
+              <span>Unlimited images</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12h16" />
+                  <path d="M12 4v16" />
+                </svg>
+              </span>
+              <span>Paste support</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M8 12h8" />
+                </svg>
+              </span>
+              <span>Privacy-first</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="images-preview" id="imagesPreview"></div>
+
+      <div class="controls">
+        <button class="process-btn" id="processBtn" disabled>
+          <span>Process Images</span>
+        </button>
+        <button class="clear-btn" id="clearBtn">Clear All</button>
+      </div>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">Processing...</div>
+      </div>
+
+      <div class="output-container">
+        <div class="output-header">
+          <div class="output-header-left">
+            <h3>Extracted Text</h3>
+            <span class="char-count" id="charCount">0 characters</span>
+          </div>
+          <div class="output-actions">
+            <button class="copy-btn" id="copyBtn">
+              <span>Copy</span>
+            </button>
+            <button class="download-btn" id="downloadBtn">
+              <span>Download</span>
+            </button>
+          </div>
+        </div>
+        <textarea id="outputText" placeholder="Extracted text will appear here..." spellcheck="false"></textarea>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <span id="toastMessage"></span>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
