@@ -28,7 +28,7 @@ npm run build
 
 ## Environment
 
-If you want to enable AI-based code formatting, create a `.env` file from `.env.example` and set `VITE_HF_API_TOKEN`.
+If you want to enable AI-based code formatting, create a `.env` file and set `VITE_HF_API_TOKEN`.
 
 Without this token, code mode will still work, but it will only apply local OCR cleanup and not perform remote AI formatting.
 
